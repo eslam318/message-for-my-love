@@ -1,0 +1,144 @@
+/* 1. ضبط خلفية الصفحة بالكامل وصفر المسافات */
+body {
+    /* ضعي مسار صورة القلوب هنا بالظبط */
+    background-image: url('colorful-love-hearts-wallpaper-free-image.jpg'); /* تأكدي من اسم ملف صورة القلوب وصيغته */
+    
+    background-size: cover;        /* بتخلي الخلفية تملأ الشاشة بالكامل */
+    background-position: center;   /* بتوسطن الخلفية */
+    background-repeat: no-repeat;  /* بتمنع تكرار الخلفية */
+    background-attachment: fixed;  /* بتثبت الخلفية عشان متتحركش مع الإسكورل */
+    
+    margin: 0;
+    padding: 0;
+    height: 100vh;                 /* بتخلي طول الصفحة مساوي لطول الشاشة بالضبط */
+    
+    /* الـ Flexbox هنا هيوسطن صندوق تسجيل الدخول فوق الخلفية */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. تنسيق الصندوق اللي جواه صورة البيبي والباسورد والزرار */
+.login-box {
+    display: flex;
+    flex-direction: column; /* بيرتب العناصر في طابور رأسي تحت بعض */
+    align-items: center;
+    justify-content: center;    /* بيوسطنهم في النص بالضبط */
+    background: transparent; /* بنخليه شفاف عشان خلفية القلوب تبان من وراه */
+    text-align: center;
+}
+
+/* 3. تنسيق حجم صورة البيبي المتحركة الـ GIF */
+.baby-gif {
+    width: 150px;           /* حجم مناسب للصورة */
+    height: auto;
+    margin-bottom: 20px;    /* مسافة تحت الصورة قبل خانة الباسورد */
+}
+
+/* 4. تنسيق خانة الباسورد */
+#passwordInput {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ff4d6d;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;    /* مسافة تحت الباسورد قبل الزرار */
+    text-align: center;
+    outline: none;
+    width: 200px;           /* عرض مناسب لخانة الباسورد */
+}
+
+/* 5. تنسيق الزرار */
+button {
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: #ff4d6d;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 120px;           /* عرض مناسب للزرار */
+}
+
+button:hover {
+    background-color: #c9184a;
+    transform: scale(1.05);
+}
+
+/* تصفير الشاشة بالكامل */
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* بيمنع أي لخبطة أو شريط تصفح زيادة */
+    font-family: Arial, sans-serif;
+}
+
+/* 🌟 الحاوية الرئيسية مرتبة رأسياً (شريط الموسيقى فوق، وتحته باقي الصفحة) */
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+/* شريط الموسيقى في الأعلى تماماً */
+.music-bar {
+    height: 70px;
+    background-color: #ff4d6d; /* لون بينك متناسق */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    width: 100%;
+}
+
+.music-bar span {
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+audio {
+    height: 35px;
+    border-radius: 20px;
+}
+
+/* الجزء الفاضي تحت الشريط */
+.content-area {
+    flex: 1; /* بياخد باقي مساحة الشاشة بالكامل تحت الشريط */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* وضع صورة القلوب كخلفية للجزء السفلي فقط ومدمجة بلون هادئ */
+    background-image: linear-gradient(rgba(255, 230, 235, 0.85), rgba(255, 230, 235, 0.85)), url('colorful-hearts.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* تأثير الكتابة */
+.typing-text {
+    font-size: 28px;
+    color: #ff4d6d;
+    font-weight: bold;
+    min-height: 40px;
+    border-left: 3px solid #ff4d6d;
+    padding-left: 10px;
+    direction: rtl; /* عشان يكتب عربي مظبوط من اليمين للشمال */
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}

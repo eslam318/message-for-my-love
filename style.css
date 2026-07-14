@@ -142,3 +142,21 @@ audio {
 @keyframes blink {
     50% { border-color: transparent; }
 }
+.sticker {
+    width: 150px;            /* حجم الصورة (تقدري تكبريه أو تصغريه براحتك) */
+    height: auto;           /* عشان تحافظ على أبعادها من غير ما تتمط */
+    margin-bottom: 25px;    /* بيعمل مسافة لطيفة ومريحة بين الصورة والكلام اللي تحتيها */
+    border-radius: 15px;    /* لو حابة الحواف تكون دائرية وناعمة */
+    /* optional: لو الصورة ليها خلفية وحابة تديها تأثير خفيف */
+    /* box-shadow: 0 4px 15px rgba(255, 77, 109, 0.2); */
+}
+
+/* تعديل بسيط على الـ content-area للتأكد إن العناصر مترتبة تحت بعضها */
+.content-area {
+    display: flex;
+    flex-direction: column;  /* بيرتب الصورة والكلام تحت بعض رأسيًا */
+    justify-content: center; /* بيوسطنهم عمودياً في الشاشة */
+    align-items: center;     /* بيوسطنهم أفقياً في النص بالظبط */
+    min-height: calc(100vh - 70px); /* يملأ المساحة المتبقية تحت شريط الموسيقى */
+    padding: 20px;
+}
